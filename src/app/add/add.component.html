@@ -1,0 +1,31 @@
+<div class="container">
+
+    
+<form (ngSubmit)="saveArticle()">
+    <div class="form-group">
+        <label>Nom de l'article</label>
+        <input type="text" class="form-control" [(ngModel)]="PostArticle.nom" name="nom">
+
+    </div>
+
+    <div class="form-group">
+        <label>Prix de l'article</label>
+        <input type="text" class="form-control" [(ngModel)]="PostArticle.prix" name="prix">
+
+    </div>
+    <div class="form-group">
+        <label>Libelle de l'article</label>
+        <input type="text" class="form-control" [(ngModel)]="PostArticle.libille" name="libille">
+
+    </div>
+    <div class="form-form">
+        <label>Quantité en stock</label>
+        <input type="text" class="form-control" [(ngModel)]="PostArticle.stock" name="stock">
+
+    </div>
+
+<button class="btn btn-primary">Submit</button>
+
+</form>
+</div>
+

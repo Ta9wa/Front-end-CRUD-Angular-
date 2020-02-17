@@ -1,0 +1,88 @@
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      
+      </nav>
+    <div class="jumbotron">
+      <h1>Gestion des articles</h1>
+    </div>
+    
+    <div class="container">
+      <div class="row">
+
+
+        <div class="col-sm">
+                    <h3>Liste des articles</h3>
+                <br>
+                
+                <table class="table ">
+                <thead class="thead-dark">
+                    
+                    <th>Nom</th>
+                    <th>Categorie</th>
+                    <th>Prix</th>
+                    <th>Description</th>
+                    <th>Quantite Disponible</th>
+                    <th >Actions</th>
+                </thead>
+
+                  <tr *ngFor="let art of data; let j=index">
+                                
+                    <td >{{art.nom}}</td>               
+                    <td>{{art.categorie}}</td>
+                    <td>{{art.prix}}</td>
+                    <td>{{art.description}}</td>
+                    <td>{{art.quantite}}</td>
+                   
+                    <td>
+                      
+                      <button class="btn btn-success" (click)="EditerArticle(art,j)" > <i class="fa fa-edit"></i> </button> 
+                      <button class="btn btn-danger" (click)="deleteArticle(art.id)" > <i class="fa fa-trash"></i></button>
+
+                    </td>
+                </table>
+                <button (click)="getData()" class="btn btn-primary" >afficher</button>
+          </div>
+        
+      <div class="col-sm">
+        <h3>Ajouter un article</h3>
+        <form (ngSubmit)="onSubmit()" >
+          <div class="form-group">
+              <label>Nom de la pièce</label>
+              <input type="text" class="form-control" [(ngModel)]="PostArticle.nom" name="nom">
+
+              
+      
+          </div>
+          <div class="form-group">
+              <label>Catégorie</label>
+              <select name="categorie" [(ngModel)]="PostArticle.categorie" class="form-control">
+                <option>Piece interne</option>
+                <option>Piece externe</option>
+               
+                
+              </select>      
+          </div>
+      
+          <div class="form-group">
+              <label>Prix de l'article</label>
+              <input type="text" class="form-control" [(ngModel)]="PostArticle.prix" name="prix">
+      
+          </div>
+          <div class="form-group">
+              <label>Description de l'article</label>
+              <input type="text" class="form-control" [(ngModel)]="PostArticle.description" name="libille">
+      
+          </div>
+          <div class="form-group">
+              <label>Quantité disponible</label>
+              <input type="text" class="form-control" [(ngModel)]="PostArticle.quantite" name="quantite">
+      
+          </div>
+        
+      <br>
+      <button class="btn btn-info btn-lg btn-block"> <i class="fa fa-check-circle"></i> {{title}}</button>
+      <button type="reset" class="btn btn-info btn-lg btn-block">Annuler</button>
+      </form>
+      </div>
+</div>
+</div>
